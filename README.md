@@ -69,3 +69,4 @@ PROPIEDADES DEL SIMULADOR
 | i, k, h | Variables auxiliares para ciclos | Numérico entero |
 
 # Diagramas de Flujo
+<img src="https://github.com/MPCHe18/simulador_COVID_19/blob/main/Recursos/Main.png" width="500">
