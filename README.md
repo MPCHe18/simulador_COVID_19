@@ -7,3 +7,7 @@ Si sólo doy un salto de línea se queda en la misma igual, le vale nepe a la ma
 Ahora voy a intentar subir una imágen.
 
 Mamó...
+
+Ahí va de nuevo:
+
+![](static/images/person-black.png)
