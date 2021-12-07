@@ -1,0 +1,799 @@
+* {
+    margin:0;
+    padding:0;
+  }
+  a:link, a:visited, a:hover, a:active {
+    color:#0f0;
+    font-size:16px;
+  }
+  body {
+    background:#eee;
+    font-family:verdana;
+  }
+  h1 {
+    color:#c0c;
+    font-size:24px;
+  }
+  p {
+    font-size:16px;
+    text-align:center
+  }
+  ul {
+    list-style-type:none;
+  }
+  #cabecera {
+    color:#ff9;
+    background-color:#000;
+    padding:10px;
+    align-content: center;
+  }
+  #contenedor {
+    margin:0 auto;
+    width:1500px;
+  }
+  #contenido {
+    background-color:#ddd;
+    float:left;
+    height:720px;
+    padding:10px;
+    width:1200px;
+  }
+  #grafica1 {
+        float:left;
+        height:360px;
+        padding: 5px 0px 0px 0px;
+        width:400px;
+      }
+  #grafica2 {
+        float:left;
+        height:360px;
+        padding: 5px 0px 0px 2px;
+        width:400px;
+      }
+  #grafica3 {
+        float:left;
+        height:360px;
+        padding: 5px 0px 0px 0px;
+        width:400px;
+      }
+  #grafica4 {
+        float:left;
+        height:360px;
+        padding: 5px 0px 0px 0px;
+        width:400px;
+      }
+  #grafica5 {
+        float:left;
+        height:360px;
+        padding: 5px 0px 0px 2px;
+        width:400px;
+      }
+  #menu {
+    background-color:#999;
+    float:left;
+    height:700px;
+    padding:20px;
+    width:320px;
+  }
+  #submenu {
+    background-color:#999;
+    float:left;
+    height:50px;
+    width:320px;
+  }
+  #espacio_vacio{
+    background-color:#999;
+    float:left;
+    height:25px;
+    width:340px;
+  }
+#espacio_vacio2{
+    background-color:#999;
+    float:left;
+    height:10px;
+    width:340px;
+  }
+#espacio_vacio3{
+    background-color:#999;
+    float:left;
+    height:10px;
+    width:340px;
+  }
+#espacio_vacio4{
+    background-color:#999;
+    float:left;
+    height:10px;
+    width:340px;
+  }
+  .range {
+    height:30px;
+    width:300px;
+    float:left;
+    background:#fff;
+    border-radius:10px;
+    padding:10px 15px 20px 15px;
+    text-align:center
+  }
+  .range .sliderValue{
+    position:relative;
+    width:100%;
+  }
+  .range .sliderValue span{
+    position: absolute;
+
+    color: #664AFF;
+    font-weight: 500;
+    top: -10px;
+    transform: translateX(-50%);
+    line-height: 20px;
+    z-index: 2;
+  }
+  .range .field{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%
+  }
+  .range .field .value{
+    position: absolute;
+    font-size: 16px;
+    font-weight: 600;
+    color: #664AFF;
+  }
+  .range .field .value.left{
+    left: 15px;
+  }
+  .range .field .value.right{
+    right: -10px;
+  }
+  .range .field input{
+    -webkit-appearance: none;
+    height: 3px;
+    width: 80%;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+  }
+
+  .range2 {
+    height:30px;
+    float:left;
+    width:200px;
+    background:#fff;
+    border-radius:10px;
+    padding:10px 15px 20px 15px;
+    text-align:center
+  }
+  .range2 .sliderValue2{
+    position:relative;
+    width:100%;
+  }
+  .range2 .sliderValue2 span2{
+    position: absolute;
+
+    color: #664AFF;
+    font-weight: 500;
+    top: -10px;
+    transform: translateX(-50%);
+    line-height: 20px;
+    z-index: 2;
+  }
+  .range2 .field2{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%
+  }
+  .range2 .field2 .value{
+    position: absolute;
+    font-size: 16px;
+    font-weight: 600;
+    color: #664AFF;
+  }
+  .range2 .field2 .value.left{
+    left: 15px;
+  }
+  .range2 .field2 .value.right{
+    right: -10px;
+  }
+  .range2 .field2 input{
+    -webkit-appearance: none;
+    height: 3px;
+    width: 80%;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+  }
+  .range3 {
+    height:30px;
+    float:left;
+    width:300px;
+    background:#fff;
+    border-radius:10px;
+    padding:10px 15px 20px 15px;
+    text-align:center
+  }
+  .range3 .sliderValue3{
+    position:relative;
+    width:100%;
+  }
+  .range3 .sliderValue3 span3{
+    position: absolute;
+
+    color: #664AFF;
+    font-weight: 500;
+    top: -10px;
+    transform: translateX(-50%);
+    line-height: 20px;
+    z-index: 2;
+  }
+  .range3 .field3{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%
+  }
+  .range3 .field3 .value{
+    position: absolute;
+    font-size: 16px;
+    font-weight: 600;
+    color: #664AFF;
+  }
+  .range3 .field3 .value.left{
+    left: 15px;
+  }
+  .range3 .field3 .value.right{
+    right: -10px;
+  }
+  .range3 .field3 input{
+    -webkit-appearance: none;
+    height: 3px;
+    width: 80%;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+  }
+  .range4 {
+    height:30px;
+    float:left;
+    width:300px;
+    background:#fff;
+    border-radius:10px;
+    padding:10px 15px 20px 15px;
+    text-align:center
+  }
+  .range4 .sliderValue4{
+    position:relative;
+    width:100%;
+  }
+  .range4 .sliderValue4 span4{
+    position: absolute;
+
+    color: #664AFF;
+    font-weight: 500;
+    top: -10px;
+    transform: translateX(-50%);
+    line-height: 20px;
+    z-index: 2;
+  }
+  .range4 .field4{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%
+  }
+  .range4 .field4 .value{
+    position: absolute;
+    font-size: 16px;
+    font-weight: 600;
+    color: #664AFF;
+  }
+  .range4 .field4 .value.left{
+    left: 15px;
+  }
+  .range4 .field4 .value.right{
+    right: -10px;
+  }
+  .range4 .field4 input{
+    -webkit-appearance: none;
+    height: 3px;
+    width: 80%;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+  }
+  .range5 {
+    height:30px;
+    float:left;
+    width:300px;
+    background:#fff;
+    border-radius:10px;
+    padding:10px 15px 20px 15px;
+    text-align:center
+  }
+  .range5 .sliderValue5{
+    position:relative;
+    width:100%;
+  }
+  .range5 .sliderValue5 span5{
+    position: absolute;
+
+    color: #664AFF;
+    font-weight: 500;
+    top: -10px;
+    transform: translateX(-50%);
+    line-height: 20px;
+    z-index: 2;
+  }
+  .range5 .field5{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%
+  }
+  .range5 .field5 .value{
+    position: absolute;
+    font-size: 16px;
+    font-weight: 600;
+    color: #664AFF;
+  }
+  .range5 .field5 .value.left{
+    left: 15px;
+  }
+  .range5 .field5 .value.right{
+    right: -10px;
+  }
+  .range5 .field5 input{
+    -webkit-appearance: none;
+    height: 3px;
+    width: 80%;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+  }
+
+  #pie {
+    background-color:#bbb;
+    clear:both;
+    color:#900;
+    padding:10px;
+    text-align:center;
+  }
+
+/* side menu*/
+  .slidecontainer {
+    width: 100%;
+  }
+  
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider#NumPersonas::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url("/static/images/user2.png");
+    cursor: pointer;
+  }
+  /*"{{ url_for('static',filename='images/user.png') }}"*/
+  .slider#NumPersonas::-moz-range-thumb {
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url("/static/images/user2.png");
+    cursor: pointer;
+  }
+
+  .slider#NumInfectados::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url("/static/images/virus.png");
+    cursor: pointer;
+  }
+  /*"{{ url_for('static',filename='images/user.png') }}"*/
+  .slider#NumInfectados::-moz-range-thumb {
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url("/static/images/virus.png");
+    cursor: pointer;
+  }
+
+  .slider#NumVacunados::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url("/static/images/vaccine.png");
+    cursor: pointer;
+  }
+  /*"{{ url_for('static',filename='images/user.png') }}"*/
+  .slider#NumVacunados::-moz-range-thumb {
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url("/static/images/vaccine.png");
+    cursor: pointer;
+  }
+
+  .slider#Comorbilidades::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url("/static/images/sick.png");
+    cursor: pointer;
+  }
+  /*"{{ url_for('static',filename='images/user.png') }}"*/
+  .slider#Comorbilidades::-moz-range-thumb {
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url("/static/images/sick.png");
+    cursor: pointer;
+  }
+
+  .slider#Dias::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url("/static/images/days.png");
+    cursor: pointer;
+  }
+  /*"{{ url_for('static',filename='images/user.png') }}"*/
+  .slider#Dias::-moz-range-thumb {
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url("/static/images/days.png");
+    cursor: pointer;
+  }
+
+  .espacio_vacio{
+    background-color: #ffffff;
+    float:left;
+    height:25px;
+    width:340px;
+  }
+
+  .mini_espacio_vacio{
+    background-color:#ffffff;
+    float:left;
+    height:5px;
+    width:340px;
+  }
+
+  /**************************/
+  .rangem {
+    height:50px;
+    float:left;
+    width:200px;
+    background:#fff;
+    border-radius:10px;
+    padding:10px 15px 20px 15px;
+    text-align:center
+  }
+  .rangem .sliderValuem{
+    position:relative;
+    width:100%;
+  }
+  .rangem .sliderValuem span{
+    position: absolute;
+
+    color: #664AFF;
+    font-weight: 500;
+    top: -25px;
+    transform: translateX(-50%);
+    line-height: 20px;
+    z-index: 2;
+  }
+  .rangem .fieldm{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%
+  }
+  .rangem .fieldm .value{
+    position: absolute;
+    font-size: 16px;
+    font-weight: 600;
+    color: #664AFF;
+  }
+  .rangem .fieldm .value.left{
+    left: 10px;
+  }
+  .rangem .fieldm .value.right{
+    right: -10px;
+  }
+  .rangem .fieldm input{
+    -webkit-appearance: none;
+    height: 5px;
+    width: 80%;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+  }
+
+  .rangem2 {
+    height:50px;
+    float:left;
+    width:200px;
+    background:#fff;
+    border-radius:10px;
+    padding:10px 15px 20px 15px;
+    text-align:center
+  }
+  .rangem2 .sliderValuem2{
+    position:relative;
+    width:100%;
+  }
+  .rangem2 .sliderValuem2 span2{
+    position: absolute;
+
+    color: #664AFF;
+    font-weight: 500;
+    top: -25px;
+    transform: translateX(-50%);
+    line-height: 20px;
+    z-index: 2;
+  }
+  .rangem2 .fieldm2{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%
+  }
+  .rangem2 .fieldm2 .value{
+    position: absolute;
+    font-size: 16px;
+    font-weight: 600;
+    color: #664AFF;
+  }
+  .rangem2 .fieldm2 .value.left{
+    left: 15px;
+  }
+  .rangem2 .fieldm2 .value.right{
+    right: -10px;
+  }
+  .rangem2 .fieldm2 input{
+    -webkit-appearance: none;
+    height: 5px;
+    width: 80%;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+  }
+
+  .rangem3 {
+    height:50px;
+    float:left;
+    width:200px;
+    background:#fff;
+    border-radius:10px;
+    padding:10px 15px 20px 15px;
+    text-align:center
+  }
+  .rangem3 .sliderValuem3{
+    position:relative;
+    width:100%;
+  }
+  .rangem3 .sliderValuem3 span3{
+    position: absolute;
+
+    color: #664AFF;
+    font-weight: 500;
+    top: -25px;
+    transform: translateX(-50%);
+    line-height: 20px;
+    z-index: 2;
+  }
+  .rangem3 .fieldm3{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%
+  }
+  .rangem3 .fieldm3 .value{
+    position: absolute;
+    font-size: 16px;
+    font-weight: 600;
+    color: #664AFF;
+  }
+  .rangem3 .fieldm3 .value.left{
+    left: 15px;
+  }
+  .rangem3 .fieldm3 .value.right{
+    right: -10px;
+  }
+  .rangem3 .fieldm3 input{
+    -webkit-appearance: none;
+    height: 5px;
+    width: 80%;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+  }
+
+  .rangem4 {
+    height:50px;
+    float:left;
+    width:200px;
+    background:#fff;
+    border-radius:10px;
+    padding:10px 15px 20px 15px;
+    text-align:center
+  }
+  .rangem4 .sliderValuem4{
+    position:relative;
+    width:100%;
+  }
+  .rangem4 .sliderValuem4 span4{
+    position: absolute;
+
+    color: #664AFF;
+    font-weight: 500;
+    top: -25px;
+    transform: translateX(-50%);
+    line-height: 20px;
+    z-index: 2;
+  }
+  .rangem4 .fieldm4{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%
+  }
+  .rangem4 .fieldm4 .value{
+    position: absolute;
+    font-size: 16px;
+    font-weight: 600;
+    color: #664AFF;
+  }
+  .rangem4 .fieldm4 .value.left{
+    left: 15px;
+  }
+  .rangem4 .fieldm4 .value.right{
+    right: -10px;
+  }
+  .rangem4 .fieldm4 input{
+    -webkit-appearance: none;
+    height: 5px;
+    width: 80%;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+  }
+
+  .rangem5 {
+    height:50px;
+    float:left;
+    width:200px;
+    background:#fff;
+    border-radius:10px;
+    padding:10px 15px 20px 15px;
+    text-align:center
+  }
+  .rangem5 .sliderValuem5{
+    position:relative;
+    width:100%;
+  }
+  .rangem5 .sliderValuem5 span5{
+    position: absolute;
+
+    color: #664AFF;
+    font-weight: 500;
+    top: -25px;
+    transform: translateX(-50%);
+    line-height: 20px;
+    z-index: 2;
+  }
+  .rangem5 .fieldm5{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%
+  }
+  .rangem5 .fieldm5 .value{
+    position: absolute;
+    font-size: 16px;
+    font-weight: 600;
+    color: #664AFF;
+  }
+  .rangem5 .fieldm5 .value.left{
+    left: 15px;
+  }
+  .rangem5 .fieldm5 .value.right{
+    right: -10px;
+  }
+  .rangem5 .fieldm5 input{
+    -webkit-appearance: none;
+    height: 5px;
+    width: 80%;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+  }
+
+  /*------button config-----------*/
+  .centerbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+
+  .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    align-self: center;
+  }
+  
+  .button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+    border-radius: 4px;
+  }
+  
+  .button1:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  /****time**/
+  .sliderT {
+    width: 600px;
+    margin-left: 250px;
+  }
+

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+    <title>Simulador Covid-19</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo="/>
+    <link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='styles/style.css') }}"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script type="text/javascript" src="static/js/main.js"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+        <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+        <br>
+        <!--<input type="range" min="1" max="100" value="50" class="slider" id="myRange">-->
+        <div class="rangem">
+            <div class="sliderValuem">
+                <span id="spanm">50</span>
+            </div>
+            <div class="fieldm">
+                <div class="value left">0</div>
+                <input type="range" min="0" max="100" value="50" step="1" class="slider" name="NumPersonas" id="NumPersonas">
+                <div class="value right">100</div>
+            </div>
+            <!-- <div class="mini_espacio_vacio"></div> -->
+            <div class="name_field">
+                Número de agentes
+            </div>
+        </div>
+        <!-- <script>
+            const slideValue = document.querySelector("span");
+            const inputSlider = document.getElementById("NumPersonas");
+            inputSlider.oninput = (()=>{
+               let value = inputSlider.value;
+               slideValue.textContent = value;
+               });
+        </script> -->
+        <div class="espacio_vacio"></div>
+        <div class="rangem2">
+            <div class="sliderValuem2">
+                <span2>50</span2>
+            </div>
+            <div class="fieldm2">
+                <div class="value left">0</div>
+                <input type="range" min="0" max="100" value="50" step="1" class="slider" name="NumInfectados" id="NumInfectados">
+                <div class="value right">100</div>
+            </div>
+                A. Infectados
+        </div>
+        <!-- <script>
+            const slideValue = document.querySelector("span2");
+            const inputSlider = document.getElementById("NumInfectados");
+            inputSlider.oninput = (()=>{
+               let value = inputSlider.value;
+               slideValue.textContent = value;
+               });
+        </script> -->
+        <div class="espacio_vacio"></div>
+        <div class="rangem3">
+            <div class="sliderValuem3">
+                <span3>50</span3>
+            </div>
+            <div class="fieldm3">
+                <div class="value left">0</div>
+                <input type="range" min="0" max="100" value="50" step="1" class="slider" name="NumVacunados" id="NumVacunados">
+                <div class="value right">100</div>
+            </div>
+            A. vacunados
+        </div>
+        <!-- <script>
+            const slideValue = document.querySelector("span3");
+            const inputSlider = document.getElementById("NumVacunados");
+            inputSlider.oninput = (()=>{
+               let value = inputSlider.value;
+               slideValue.textContent = value;
+               });
+        </script> -->
+        <div class="espacio_vacio"></div>
+        <div class="rangem4">
+            <div class="sliderValuem4">
+                <span4>50</span4>
+            </div>
+            <div class="fieldm4">
+                <div class="value left">0</div>
+                <input type="range" min="0" max="100" value="50" step="1" class="slider" name="Comorbilidades" id="Comorbilidades">
+                <div class="value right">100</div>
+            </div>
+            A. comorbilidades
+        </div>
+        <!-- <script>
+            const slideValue = document.querySelector("span4");
+            const inputSlider = document.getElementById("Comorbilidades");
+            inputSlider.oninput = (()=>{
+               let value = inputSlider.value;
+               slideValue.textContent = value;
+               });
+        </script> -->
+        <div class="espacio_vacio"></div>
+        <div class="rangem5">
+            <div class="sliderValuem5">
+                <span5>100</span5>
+            </div>
+            <div class="fieldm5">
+                <div class="value left">0</div>
+                <input type="range" min="0" max="200" value="100" step="1" class="slider" name="Dias" id="Dias">
+                <div class="value right">200</div>
+            </div>
+            Dias a simular
+        </div>
+        <!-- <script>
+            const slideValue = document.querySelector("span5");
+            const inputSlider = document.getElementById("Dias");
+            inputSlider.oninput = (()=>{
+               let value = inputSlider.value;
+               slideValue.textContent = value;
+               });
+        </script> -->
+        <!-- <div class="espacio_vacio"></div> -->
+        <button type="button" class="button button1" onclick="getData()">Configurar</button>
+        
+        <!-- <button type="button" onclick="getTick()">Iniciar</button>
+        <button type="button" onclick="siguiente()">Siguiente</button> -->
+
+        <!--<input type="range" min="0" max="50" value="25" step="1" class="slider" name="NumPersonas" id="NumPersonas">-->
+        <!-- <input type="range" min="0" max="50" value="25" step="1" class="slider" name="NumInfectados" id="NumInfectados">
+        <input type="range" min="0" max="50" value="25" step="1" class="slider" name="NumVacunados" id="NumVacunados">
+        <input type="range" min="0" max="50" value="25" step="1" class="slider" name="Comorbilidades" id="Comorbilidades">
+        <input type="range" min="0" max="200" value="25" step="1" class="slider" name="Dias" id="Dias"> -->
+    </div> 
+ <div id="Contenedor">
+    <button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+    <div id="cabecera">
+        <p>Simulador de comportamiento de la pandemia covid-19</p>
+        <input type="range" min="0" max="200" value="100" step="1" class="sliderT" name="sliderTime" id="sliderTime">
+    </div>
+     <!-- <div id="menu">
+         <div id="submenu"><p> Configuración de simulador</p></div>
+         <form action="" id="form">
+         <div class="range">
+             <div class="sliderValue">
+                 <span>25</span>
+             </div>
+             <div class="field">
+                 <div class="value left">0</div>
+                 <input type="range" min="0" max="50" value="25" step="1" name="NumPersonas" id="NumPersonas">
+                 <div class="value right">50</div>
+             </div>
+             Número de agentes
+         </div> -->
+         <script>
+             const slideValue = document.querySelector("span");
+             const inputSlider = document.getElementById("NumPersonas");
+             inputSlider.oninput = (()=>{
+                let value = inputSlider.value;
+                slideValue.textContent = value;
+                });
+         </script>
+
+        <!-- <div id="espacio_vacio"></div>
+         <div class="range2">
+             <div class="sliderValue2">
+                 <span2>25</span2>
+             </div>
+             <div class="field2">
+                 <div class="value left">0</div>
+                 <input type="range" min="0" max="50" value="25" step="1" name="NumInfectados" id="NumInfectados">
+                 <div class="value right">50</div>
+             </div>
+             Número de agentes infectados
+         </div> -->
+         <script>
+             const slideValue2 = document.querySelector("span2");
+             const inputSlider2 = document.getElementById("NumInfectados");
+             inputSlider2.oninput = (()=>{
+                let value = inputSlider2.value;
+                slideValue2.textContent = value;
+                });
+         </script>
+
+        <!-- <div id="espacio_vacio2"></div>
+         <div class="range3">
+             <div class="sliderValue3">
+                 <span3>25</span3>
+             </div>
+             <div class="field3">
+                 <div class="value left">0</div>
+                 <input type="range" min="0" max="50" value="25" step="1" name="NumVacunados" id="NumVacunados">
+                 <div class="value right">50</div>
+             </div>
+             Número de agentes vacunados
+         </div> -->
+         <script>
+             const slideValue3 = document.querySelector("span3");
+             const inputSlider3 = document.getElementById("NumVacunados");
+             inputSlider3.oninput = (()=>{
+                let value = inputSlider3.value;
+                slideValue3.textContent = value;
+                });
+         </script>
+
+        <!-- <div id="espacio_vacio3"></div>
+         <div class="range4">
+             <div class="sliderValue4">
+                 <span4>25</span4>
+             </div>
+             <div class="field4">
+                 <div class="value left">0</div>
+                 <input type="range" min="0" max="50" value="25" step="1" name="Comorbilidades" id="Comorbilidades">
+                 <div class="value right">50</div>
+             </div>
+             Núm. de agentes con comorbilidades
+         </div> -->
+         <script>
+             const slideValue4 = document.querySelector("span4");
+             const inputSlider4 = document.getElementById("Comorbilidades");
+             inputSlider4.oninput = (()=>{
+                let value = inputSlider4.value;
+                slideValue4.textContent = value;
+                });
+         </script>
+
+        <!--<div id="espacio_vacio4"></div>
+         <div class="range5">
+             <div class="sliderValue5">
+                 <span5>25</span5>
+             </div>
+             <div class="field5">
+                 <div class="value left">0</div>
+                 <input type="range" min="0" max="200" value="25" step="1" name="Dias" id="Dias">
+                 <div class="value right">200</div>
+             </div>
+             Núm. de dias a simular
+         </div>-->
+         <script>
+             const slideValue5 = document.querySelector("span5");
+             const inputSlider5 = document.getElementById("Dias");
+             inputSlider5.oninput = (()=>{
+                let value = inputSlider5.value;
+                slideValue5.textContent = value;
+                });
+         </script>
+
+        <!--<button type="button" onclick="getData()">Configurar</button>
+        <button type="button" onclick="getTick()">Iniciar</button>
+        <button type="button" onclick="siguiente()">Siguiente</button>
+         </form>
+     </div> -->
+     <div id="contenido">
+               <!--Elemento Canvas para mostrar graficos personalizados-->
+      <canvas
+        id="dibujo"
+        width="1000"
+        height="600"
+        style="
+          cursor: crosshair;
+          border: 2px solid grey;
+          background: #d2d2ff;
+          margin-left: 50px;
+        "
+      ></canvas>
+         <div
+        id="output"
+        style="position: absolute; padding: 5px"
+        class="non-selectable"
+      ></div>
+     </div>
+    <div id="grafica1">
+         <canvas id="myChart1" width="390" height="350"  style="
+          cursor: crosshair;
+          border: 2px solid grey;
+          background: #d2d2ff;
+          margin-left: 3px;
+        "></canvas>
+    </div>
+     <div id="grafica2">
+         <canvas id="myChart2" width="390" height="350"  style="
+          cursor: crosshair;
+          border: 2px solid grey;
+          background: #d2d2ff;
+          margin-left: 3px;
+        "></canvas>
+     </div>
+     <div id="grafica3">
+         <canvas id="myChart3" width="390" height="350"  style="
+          cursor: crosshair;
+          border: 2px solid grey;
+          background: #d2d2ff;
+          margin-left: 3px;
+        "></canvas>
+     </div>
+     <div id="grafica4">
+         <canvas id="myChart4" width="390" height="350"  style="
+          cursor: crosshair;
+          border: 2px solid grey;
+          background: #d2d2ff;
+          margin-left: 3px;
+        "></canvas>
+     </div>
+     <div id="grafica5">
+         <canvas id="myChart5" width="390" height="350"  style="
+          cursor: crosshair;
+          border: 2px solid grey;
+          background: #d2d2ff;
+          margin-left: 3px;
+        "></canvas>
+     </div>
+ </div>
+</body>
+</html>
